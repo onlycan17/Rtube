@@ -4,3 +4,6 @@ package-lock.json
 /uploads
 .DS_Store
 /assets
+.git
+.vscode
+/dist
