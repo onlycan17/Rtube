@@ -157,7 +157,7 @@ export const postEdit= async(req,res)=>{
         body: { name, email, username, location},
         file,
     } = req;
-    console.log(file);
+    
     let checkBool;
     let checkUpdate; 
     if(session_email !== email || session_username !== username){
@@ -174,8 +174,9 @@ export const postEdit= async(req,res)=>{
         errorMessage: "This username/email is already use.",
     });
     }
+    const isHeroku = process.env.NODE_ENV === "production";
     const updatedUser =  await User.findByIdAndUpdate(_id,{
-        avatarUrl: file ? file.location : avatarUrl,
+        avatarUrl: file ? (isHeroku ? file.location  : file.path) : avatarUrl,
         name,
         email,
         username,
