@@ -1,7 +1,7 @@
 {
   "name": "rtube",
   "version": "1.0.0",
-  "description": "The best way to watch a videos.",
+  "description": "The best way to watch a videos. heroku",
   "main": "index.js",
   "repository": {
     "type": "git",
